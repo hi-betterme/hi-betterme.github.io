@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>财商大师 · 七人智慧</title>
+<style>
+  :root{
+    --paper:#f6f2e9; --paper2:#efe9dc; --ink:#2b2822; --ink-soft:#6b6353;
+    --gold:#b08d57; --gold-soft:#c9ab7a; --line:#d8cfbc;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    font-family:"Songti SC","Noto Serif SC",Georgia,"Times New Roman",serif;
+    background:var(--paper); color:var(--ink); overflow:hidden;
+  }
+  .slide{
+    position:absolute; inset:0; display:none; flex-direction:column;
+    justify-content:center; padding:8vh 10vw; opacity:0;
+    transition:opacity .6s ease;
+  }
+  .slide.active{display:flex; opacity:1}
+  .rule{width:64px;height:1px;background:var(--gold);margin:28px 0}
+  .kicker{font-size:14px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase}
+  h1{font-size:56px;font-weight:500;letter-spacing:.08em;line-height:1.3}
+  h2{font-size:40px;font-weight:500;letter-spacing:.06em}
+  .sub{font-size:18px;color:var(--ink-soft);letter-spacing:.12em;margin-top:14px}
+  .person-name{font-size:48px;font-weight:500;letter-spacing:.1em}
+  .person-tag{font-size:17px;color:var(--ink-soft);margin-top:10px;letter-spacing:.05em}
+  ul.points{list-style:none;margin-top:8px}
+  ul.points li{
+    font-size:21px;line-height:1.9;padding-left:26px;position:relative;max-width:34em;
+  }
+  ul.points li::before{
+    content:"";position:absolute;left:0;top:.95em;width:12px;height:1px;background:var(--gold);
+  }
+  .quote{
+    margin-top:36px;padding:22px 28px;border-left:1px solid var(--gold);
+    font-size:22px;font-style:italic;color:var(--ink-soft);max-width:32em;line-height:1.8;
+  }
+  .quote .who{display:block;margin-top:10px;font-style:normal;font-size:14px;letter-spacing:.2em;color:var(--gold)}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 48px;margin-top:8px;max-width:60em}
+  .card{border-top:1px solid var(--line);padding-top:16px}
+  .card .n{font-size:15px;color:var(--gold);letter-spacing:.15em}
+  .card .t{font-size:19px;margin-top:6px}
+  .card .d{font-size:15px;color:var(--ink-soft);margin-top:6px;line-height:1.7}
+  .spectrum{display:flex;align-items:center;gap:0;margin-top:20px;max-width:56em}
+  .spectrum .end{font-size:16px;color:var(--ink-soft);width:12em;line-height:1.6}
+  .spectrum .bar{flex:1;height:1px;background:var(--line);position:relative;margin:0 24px}
+  .dot{position:absolute;top:-5px;width:11px;height:11px;border-radius:50%;
+       background:var(--paper);border:1px solid var(--gold);transform:translateX(-50%)}
+  .dot span{position:absolute;top:18px;left:50%;transform:translateX(-50%);
+            font-size:13px;white-space:nowrap;color:var(--ink)}
+  .foot{
+    position:absolute;bottom:4vh;left:10vw;right:10vw;display:flex;
+    justify-content:space-between;font-size:12px;letter-spacing:.25em;color:var(--ink-soft);
+  }
+  .num{color:var(--gold)}
+  .res{font-size:19px;line-height:2.1;color:var(--ink)}
+  .res b{color:var(--gold);font-weight:500;letter-spacing:.1em;margin-right:12px}
+  @media (max-width:760px){
+    h1{font-size:34px}.person-name{font-size:32px}h2{font-size:28px}
+    ul.points li{font-size:17px}.quote{font-size:18px}.grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- 1 封面 -->
+<section class="slide active">
+  <div class="kicker">财商知识库 · 大师系列</div>
+  <div class="rule"></div>
+  <h1>七个人的金钱观</h1>
+  <div class="sub">巴菲特 · 纳瓦尔 · 段永平 · 卡登 · 乔布斯 · 马斯克 · 雷军</div>
+  <div class="foot"><span>CAI SHANG KNOWLEDGE BASE</span><span class="num">01</span></div>
+</section>
+
+<!-- 2 总览 -->
+<section class="slide">
+  <div class="kicker">总览</div>
+  <div class="rule"></div>
+  <h2>七种通往财富的哲学</h2>
+  <div class="grid" style="margin-top:36px">
+    <div class="card"><div class="n">壹</div><div class="t">沃伦·巴菲特</div><div class="d">复利与长期主义，好公司拿十年</div></div>
+    <div class="card"><div class="n">贰</div><div class="t">纳瓦尔·拉维坎特</div><div class="d">专长 × 杠杆 × 判断力</div></div>
+    <div class="card"><div class="n">叁</div><div class="t">段永平</div><div class="d">做对的事，把事做对</div></div>
+    <div class="card"><div class="n">肆</div><div class="t">格兰特·卡登</div><div class="d">10 倍目标，10 倍行动，现金流为王</div></div>
+    <div class="card"><div class="n">伍</div><div class="t">史蒂夫·乔布斯</div><div class="d">专注即舍弃，产品即信仰</div></div>
+    <div class="card"><div class="n">陆</div><div class="t">埃隆·马斯克</div><div class="d">第一性原理，全押未来</div></div>
+    <div class="card"><div class="n">柒</div><div class="t">雷军</div><div class="d">顺势而为，敢为天下后</div></div>
+  </div>
+  <div class="foot"><span>OVERVIEW</span><span class="num">02</span></div>
+</section>
+
+<!-- 3 巴菲特 -->
+<section class="slide">
+  <div class="kicker">壹 · 价值投资</div>
+  <div class="rule"></div>
+  <div class="person-name">沃伦·巴菲特</div>
+  <div class="person-tag">伯克希尔·哈撒韦 · 奥马哈先知</div>
+  <ul class="points" style="margin-top:28px">
+    <li>买股票就是买公司的一部分——做股东，不是炒代码</li>
+    <li>能力圈：重要的不是圈有多大，而是知道边界在哪</li>
+    <li>护城河 + 安全边际：好公司，也要好价格</li>
+  </ul>
+  <div class="quote">「人生就像滚雪球，重要的是找到很湿的雪，和很长的坡。」<span class="who">WARREN BUFFETT</span></div>
+  <div class="foot"><span>VALUE INVESTING</span><span class="num">03</span></div>
+</section>
+
+<!-- 4 纳瓦尔 -->
+<section class="slide">
+  <div class="kicker">贰 · 杠杆与判断</div>
+  <div class="rule"></div>
+  <div class="person-name">纳瓦尔·拉维坎特</div>
+  <div class="person-tag">AngelList 创始人 · 《纳瓦尔宝典》</div>
+  <ul class="points" style="margin-top:28px">
+    <li>追求财富，而不是金钱：财富是睡觉时也赚钱的资产</li>
+    <li>专长 × 杠杆 × 判断力 = 不可替代的定价权</li>
+    <li>代码和媒体，是普通人无需许可的杠杆</li>
+  </ul>
+  <div class="quote">「你不可能通过出租时间致富，你必须拥有股权。」<span class="who">NAVAL RAVIKANT</span></div>
+  <div class="foot"><span>LEVERAGE</span><span class="num">04</span></div>
+</section>
+
+<!-- 5 段永平 -->
+<section class="slide">
+  <div class="kicker">叁 · 本分</div>
+  <div class="rule"></div>
+  <div class="person-name">段永平</div>
+  <div class="person-tag">步步高 / OPPO / vivo 幕后 · 「大道无形我有型」</div>
+  <ul class="points" style="margin-top:28px">
+    <li>做对的事，把事做对——方向错了，效率越高死得越快</li>
+    <li>不懂不做；Stop Doing List 比 To Do List 更重要</li>
+    <li>买公司就是买企业文化：利润之上的追求</li>
+  </ul>
+  <div class="quote">「所谓长期投资，就是在你理解的地方下重注，然后一直拿着。」<span class="who">DUAN YONGPING</span></div>
+  <div class="foot"><span>COMMON SENSE</span><span class="num">05</span></div>
+</section>
+
+<!-- 6 卡登 -->
+<section class="slide">
+  <div class="kicker">肆 · 行动主义</div>
+  <div class="rule"></div>
+  <div class="person-name">格兰特·卡登</div>
+  <div class="person-tag">《10X 法则》 · Cardone Capital · 教女儿谈钱</div>
+  <ul class="points" style="margin-top:28px">
+    <li>10X 法则：目标设大 10 倍，行动量加大 10 倍</li>
+    <li>现金流为王：每月进账比账面数字重要</li>
+    <li>销售是底层技能；金钱观要从小讲</li>
+  </ul>
+  <div class="quote">「永远不要把目标调低，要把行动量调大。」<span class="who">GRANT CARDONE</span></div>
+  <div class="foot"><span>10X</span><span class="num">06</span></div>
+</section>
+
+<!-- 7 乔布斯 -->
+<section class="slide">
+  <div class="kicker">伍 · 产品信仰</div>
+  <div class="rule"></div>
+  <div class="person-name">史蒂夫·乔布斯</div>
+  <div class="person-tag">苹果 · 皮克斯 · 科技与人文的十字路口</div>
+  <ul class="points" style="margin-top:28px">
+    <li>专注 = 说不：回归苹果后砍掉 350 个产品，只留 10 个</li>
+    <li>你无法预先把点连成线——只能在回顾时看清</li>
+    <li>1 美元年薪，财富来自股权而非薪酬</li>
+  </ul>
+  <div class="quote">「求知若饥，虚心若愚。」（Stay hungry, stay foolish.）<span class="who">STEVE JOBS</span></div>
+  <div class="foot"><span>FOCUS</span><span class="num">07</span></div>
+</section>
+
+<!-- 8 马斯克 -->
+<section class="slide">
+  <div class="kicker">陆 · 第一性原理</div>
+  <div class="rule"></div>
+  <div class="person-name">埃隆·马斯克</div>
+  <div class="person-tag">SpaceX · Tesla · 增量世界的王</div>
+  <ul class="points" style="margin-top:28px">
+    <li>回到物理学的基本事实重新推导，不用类比推理</li>
+    <li>如果一件事足够重要，即使胜算不大也要去做</li>
+    <li>快速试错：星舰炸了再炸，失败是创新的成本</li>
+  </ul>
+  <div class="quote">「坚持非常重要。除非被迫放弃，否则不要放弃。」<span class="who">ELON MUSK</span></div>
+  <div class="foot"><span>FIRST PRINCIPLES</span><span class="num">08</span></div>
+</section>
+
+<!-- 9 雷军 -->
+<section class="slide">
+  <div class="kicker">柒 · 顺势而为</div>
+  <div class="rule"></div>
+  <div class="person-name">雷军</div>
+  <div class="person-tag">金山 16 年 · 40 岁创办小米 · 50 岁造车</div>
+  <ul class="points" style="margin-top:28px">
+    <li>风口论：方向比努力重要，时代红利会放大努力</li>
+    <li>七字诀：专注、极致、口碑、快</li>
+    <li>敢为天下后，后中争先——重仓自己积累多年的能力圈</li>
+  </ul>
+  <div class="quote">「永远相信美好的事情即将发生。」<span class="who">LEI JUN</span></div>
+  <div class="foot"><span>MOMENTUM</span><span class="num">09</span></div>
+</section>
+
+<!-- 10 分歧光谱 -->
+<section class="slide">
+  <div class="kicker">对照</div>
+  <div class="rule"></div>
+  <h2>他们并不一致——这正是价值</h2>
+  <div class="spectrum" style="margin-top:64px">
+    <div class="end">守住能力圈<br>永远不要亏钱<br><b style="color:var(--gold)">保守派</b></div>
+    <div class="bar">
+      <div class="dot" style="left:8%"><span>巴菲特</span></div>
+      <div class="dot" style="left:28%"><span>段永平</span></div>
+      <div class="dot" style="left:48%"><span>纳瓦尔</span></div>
+      <div class="dot" style="left:66%"><span>雷军</span></div>
+      <div class="dot" style="left:84%"><span>卡登</span></div>
+      <div class="dot" style="left:97%"><span>马斯克</span></div>
+    </div>
+    <div class="end" style="text-align:right">押上全部<br>拥抱 90% 失败率<br><b style="color:var(--gold)">进攻派</b></div>
+  </div>
+  <div class="sub" style="margin-top:80px">同一条光谱上，选择你信任的位置——然后用那个位置的纪律要求自己。</div>
+  <div class="foot"><span>SPECTRUM</span><span class="num">10</span></div>
+</section>
+
+<!-- 11 学习资源 -->
+<section class="slide">
+  <div class="kicker">延伸</div>
+  <div class="rule"></div>
+  <h2>继续深入</h2>
+  <div class="res" style="margin-top:28px">
+    <b>纪录片</b>《成为沃伦·巴菲特》《富翁谷底求翻身》《金钱与我》等 TOP10<br>
+    <b>播　客</b>知行小酒馆 · 无人知晓 · 起朱楼宴宾客 · 面基<br>
+    <b>书　单</b>《纳瓦尔宝典》《小米创业思考》《段永平投资问答录》<br>
+    <b>网　站</b>知识库全文公开：hi-betterme.github.io
+  </div>
+  <div class="foot"><span>RESOURCES</span><span class="num">11</span></div>
+</section>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  function go(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+  }
+  document.addEventListener('keydown',e=>{
+    if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key))go(i+1);
+    if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key))go(i-1);
+  });
+  document.addEventListener('click',()=>go(i+1));
+  let tx=null;
+  document.addEventListener('touchstart',e=>tx=e.touches[0].clientX);
+  document.addEventListener('touchend',e=>{
+    if(tx===null)return;
+    const dx=e.changedTouches[0].clientX-tx;
+    if(dx<-40)go(i+1); if(dx>40)go(i-1); tx=null;
+  });
+</script>
+</body>
+</html>
